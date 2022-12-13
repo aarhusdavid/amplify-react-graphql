@@ -11,13 +11,15 @@ function Tutorial() {
 
   return (
     <div className="App">
-      <p>Hello {user}!</p>
-      <p>You are working with {recipient}</p>
+      <h1>Hello {user}!</h1>
+      <hr></hr> 
+      <h2>You are working with {recipient}</h2>
+      <hr></hr>
       <p>Subject: {subjectline}!</p>
+      <hr></hr>  {/* dont put space between <hr>elements</hr> */}
       <p>Blurb: {blurb}!</p>
-
-
     </div>
+
   );
 }
 

@@ -2,15 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Admin from './Admin';
+
 // import reportWebVitals from './reportWebVitals';
 import {FrontContextProvider} from './providers/frontContext';
-
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// );
 
 ReactDOM.render(
   <React.StrictMode>
@@ -19,6 +14,15 @@ ReactDOM.render(
     </FrontContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
+);
+
+ReactDOM.render(
+  <React.StrictMode>
+    <FrontContextProvider>
+      <Admin />
+    </FrontContextProvider>
+  </React.StrictMode>,
+  document.getElementById('root2')
 );
 
 

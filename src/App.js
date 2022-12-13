@@ -5,7 +5,7 @@ import { useFrontContext } from './providers/frontContext';
 
 function App() {
   const context = useFrontContext();
-
+  
   if (!context)
       return (
         <div className="App">
