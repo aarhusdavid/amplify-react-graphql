@@ -18,15 +18,15 @@ function Admin() {
   switch(true) {
       case admins.includes(context.teammate.name):
         return (
-          <div className="Admin">
-              <Manage />
-          </div>
+            <div className="Admin">
+                <Manage />
+            </div>
         );
       default:
         return (
-        <div className="Admin">
-            <p>Not a registered Admin</p>
-        </div>
+            <div className="Admin">
+                <p>Not a registered Admin</p>
+            </div>
         )
   };
 }
