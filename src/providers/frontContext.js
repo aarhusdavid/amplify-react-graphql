@@ -1,5 +1,6 @@
 import {createContext, useContext, useEffect, useState} from 'react';
 import Front from '@frontapp/plugin-sdk';
+// import {Avatar} from '@frontapp/ui-kit';
 
 /*
  * Context.
