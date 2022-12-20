@@ -1,35 +1,75 @@
-import {Avatar, VisualSizesEnum } from '@frontapp/ui-kit';
+// import {} from '@frontapp/ui-kit';
 import { useFrontContext } from '../providers/frontContext';
+import React, {useEffect} from 'react';
+
+// VisualSizesEnum  for avatar size
 
 function Tutorial() {
   const context = useFrontContext();
-
-  //////////////// teammate data models
-  const user = (context.teammate && context.teammate.name) ? context.teammate.name : 'NULL';
-  const recipient = (context.conversation && context.conversation.recipient && context.conversation.recipient.name) ? context.conversation.recipient.name : '';
+  // var words = "";
+  // var notice =  ""
+  // const keyClaimsterms = ["Return","damaged","lost","broken","trashed","bad","awful","pallets","pallet","pictures"];
+  // const user = (context.teammate && context.teammate.name) ? context.teammate.name : 'NULL';
   const subjectline = (context.conversation && context.conversation.subject ) ? context.conversation.subject : ' ';
-  // const id = (context.teammate && context.teammate.id) ? context.teammate.id : 'NULL';
-
-  //////////////// conversation data models (max characters are 201 for blurb)
   const blurb = (context.conversation && context.conversation.blurb ) ? context.conversation.blurb : ' ';
+  // if (blurb.length === 0) {
+  //   words = "No message";
+  // } else {
+  //   words = blurb.split(' ');
+  // }
+  // for (var i = 0; i < words; i++) {
+  //   switch(true) {
+  //     case keyClaimsterms.includes(words[i]):
+  //       notice = "Reach out to Claims Team!";
+  //       break;
+  //     default:
+  //       notice = "Not a Claims inquiry";
+  //   }
+  // };
 
-  //////////////// contact data models
-  // const desc = (context.contact && context.contact.description) ? context.contact.description : 'NULL';
-  // <Avatar name={user}/>
-  
-  //////////////// inbox data models
-  // var box = [ownerinbox].shift()
+
+  // var inboxes = (context.conversation && context.conversation.inboxes) ? context.conversation.inboxes : '';
+
+  useEffect(() => {
+    // Pseudo-code for fetching data from an external API or database
+    // setCompanyStats(
+    //   {
+    //     'company': 'Blue Rose Labs',
+    //     'accountNumber': 54968483,
+    //     'activeOrder': 8347
+    //   }
+    // );
+  }, []);
+
 
   return (
     <div className="App">
-      <h1 class="App-Avatar"><Avatar name={user} size={VisualSizesEnum.EXTRA_LARGE}/></h1>
+      <h1 className='App-h1'>Latest Message</h1>
+
+      <p className='App-h1'>Subject: {subjectline}</p>
+      <p className='App-h1'>Message: {blurb}</p>
       <hr></hr>
-      <h3>You are working with: {recipient}</h3>
-      <hr></hr>
-      <p>Subject: {subjectline}</p>
-      <hr></hr>  {/* dont put space between <hr>elements</hr> */}
-      <p>Message: {blurb}!</p>
+
+      <h1 className='App-h1'>Tags</h1>
+      {context.conversation.tags.map((tag) => (
+        <li>{tag.name}</li>))}
+              <hr></hr>
+
+      <h1 className='App-h1'>Inboxes</h1>
+      {context.conversation.inboxes.map((inbox) => (
+        <li>{inbox.name}</li>))}
+            <hr></hr>
+
+      <h1 className='App-h1'>Links</h1>
+      {context.conversation.links.map((link) => (
+        <li>{link.externalUrl}</li>))}
+            <hr></hr>
+
+      {/* {context.comment.content.map((content) => (
+        <li>{content.body}</li>))} */}
     </div>
+
+        
 
   );
 }

@@ -1,15 +1,19 @@
 import './App.css';
 import Tutorial from './components/Tutorial';
+import {Tab} from '@frontapp/ui-kit';
 import { useFrontContext } from './providers/frontContext';
+// import React, {useState} from 'react';
 
 
 function App() {
   const context = useFrontContext();
-  
+  // const tabs = (context.tabs && context.tabs.name ) ? context.tabs.name : ' ';
+  // const [selectedTab, setSelectedTab] = useState(tabs[0]);
+
   if (!context)
       return (
-        <div className="App">
-          <p>Waiting to connect to the Front context.</p>
+        <div className='App'>
+          <p>Waiting to connect to the Front context......</p>
         </div>
       )
 
@@ -23,7 +27,10 @@ function App() {
       case 'singleConversation':
         return (
           <div className="App">
+            <h1 class="App-TabClaims"><Tab isSelected id="claims" name="Claims" onClick={function(){}}></Tab></h1>
             <Tutorial />
+            {/* <TabGroup>{tabs.map(tab => (<Tab key={tab} name={tab} isSelected={tab === selectedTab} onClick={() => setSelectedTab(tab)} />
+            ))}</TabGroup> */}
           </div>
         );
       case 'multiConversations':
@@ -38,4 +45,8 @@ function App() {
   };
 }
 
+
+
 export default App;
+
+

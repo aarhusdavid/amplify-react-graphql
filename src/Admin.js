@@ -7,12 +7,12 @@ import { useFrontContext } from './providers/frontContext';
 
 function Admin() {
   const context = useFrontContext();
-  const admins = ["Trevor Marioni", "Mike Lahey", "John Mebane","David Aarhus"];
+  const admins = ["Trevor Marioni", "Mike Lahey", "John Mebane","David Aarhus","Meghan Purdy"];
 
   if (!context)
       return (
         <div className="Admin">
-          {/* <p>Waiting to connect to the Front context.</p> */}
+          <p>Waiting to connect to the Front context.......</p>
         </div>
       )
   switch(true) {

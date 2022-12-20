@@ -7,6 +7,7 @@ import Admin from './Admin';
 // import reportWebVitals from './reportWebVitals';
 import {FrontContextProvider} from './providers/frontContext';
 
+// ...proceed with the request.
 ReactDOM.render(
   <React.StrictMode>
     <FrontContextProvider>
