@@ -29,8 +29,6 @@ function App() {
           <div className="App">
             <h1 class="App-TabClaims"><Tab isSelected id="claims" name="Claims" onClick={function(){}}></Tab></h1>
             <Tutorial />
-            {/* <TabGroup>{tabs.map(tab => (<Tab key={tab} name={tab} isSelected={tab === selectedTab} onClick={() => setSelectedTab(tab)} />
-            ))}</TabGroup> */}
           </div>
         );
       case 'multiConversations':

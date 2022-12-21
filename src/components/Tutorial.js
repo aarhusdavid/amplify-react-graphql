@@ -26,7 +26,7 @@ function Tutorial() {
   //       notice = "Not a Claims inquiry";
   //   }
   // };
-
+   
 
   // var inboxes = (context.conversation && context.conversation.inboxes) ? context.conversation.inboxes : '';
 
@@ -51,19 +51,22 @@ function Tutorial() {
       <hr></hr>
 
       <h1 className='App-h1'>Tags</h1>
-      {context.conversation.tags.map((tag) => (
-        <li>{tag.name}</li>))}
-              <hr></hr>
+      <ol>{context.conversation.tags.map((tag) => (
+        <li className='App-h1'>{tag.name}</li>
+      ))}</ol>
+      <hr></hr>
 
       <h1 className='App-h1'>Inboxes</h1>
-      {context.conversation.inboxes.map((inbox) => (
-        <li>{inbox.name}</li>))}
-            <hr></hr>
+      <ol>{context.conversation.inboxes.map((inbox) => (
+        <li className='App-h1'>{inbox.name}</li>
+        ))}</ol>
+      <hr></hr>
 
       <h1 className='App-h1'>Links</h1>
-      {context.conversation.links.map((link) => (
-        <li>{link.externalUrl}</li>))}
-            <hr></hr>
+      <ol>{context.conversation.links.map((link) => (
+        <li className='App-h1'><a target="_blank" href={link.externalUrl} rel="noopener noreferrer">Link</a></li>
+        ))}</ol>
+      <hr></hr>
 
       {/* {context.comment.content.map((content) => (
         <li>{content.body}</li>))} */}

@@ -12,7 +12,7 @@ function Admin() {
   if (!context)
       return (
         <div className="Admin">
-          <p>Waiting to connect to the Front context.......</p>
+          {/* <p>Waiting to connect to the Front context.......</p> */}
         </div>
       )
   switch(true) {
